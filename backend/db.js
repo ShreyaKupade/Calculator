@@ -1,18 +1,22 @@
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',           // Default is usually 'root'
-    password: 'SumedhShreya', // IMPORTANT: Put your actual MySQL password here
-    database: 'calc_db'     // The database you just created in the image
+    host: '://aivencloud.com',
+    port: 27519,
+    user: 'avnadmin',
+    password: 'AVNS_9OZCfqw8NetSZTVszu4', // Aapka password
+    database: 'defaultdb',
+    ssl: {
+        rejectUnauthorized: false // Yeh line cloud ke liye bahut zaruri hai
+    }
 });
 
-db.connect((err) => {
+db.connect(err => {
     if (err) {
-        console.error('Database connection failed: ' + err.stack);
-        return;
+        console.error("Cloud Connection Error: " + err.message);
+    } else {
+        console.log("✅ Successfully connected to Aiven Cloud Database!");
     }
-    console.log('Connected to MySQL Database!');
 });
 
 module.exports = db;
