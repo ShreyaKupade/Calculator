@@ -18,7 +18,7 @@ async function calculate() {
         const result = eval(expression);
         display.value = result;
 
-        // आपकी Render वाली सही लिंक यहाँ है
+        // डेटाबेस में सेव करने के लिए आपकी लाइव रेंडर लिंक
         await fetch('https://onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
