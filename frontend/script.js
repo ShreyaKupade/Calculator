@@ -11,7 +11,7 @@ async function calculate() {
         display.value = result;
 
         // Backend को डेटा भेजना (MySQL में सेव करने के लिए)
-        await fetch('http://localhost:5000/api/save', {
+        await fetch(' https://calculator-backend-iw0r.onrender.com, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ formula: expression, total: result })
